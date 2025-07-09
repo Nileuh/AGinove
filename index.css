@@ -1,0 +1,443 @@
+
+
+/* Variables CSS pour les couleurs */
+:root {
+    --primary-color: #007bff; /* Bleu principal */
+    --secondary-color: #6c757d; /* Gris secondaire */
+    --tertiary-color: #28a745; /* Vert pour CTA secondaire */
+    --text-color: #333;
+    --heading-color: #222;
+    --background-light: #f8f9fa;
+    --background-dark: #343a40;
+    --white: #ffffff;
+    --light-grey: #e9ecef;
+}
+
+/* Réinitialisation de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white);
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2.2em; }
+h3 { font-size: 1.8em; }
+
+p {
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: darken(var(--primary-color), 10%); /* Attention: darken n'est pas du CSS pur, utilisez une couleur hex manuelle */
+    color: white; /* Exemple de couleur plus foncée */
+}
+
+ul {
+    list-style: none;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Boutons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker primary */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+.btn-tertiary {
+    background-color: var(--tertiary-color);
+    color: var(--white);
+}
+
+.btn-tertiary:hover {
+    background-color: #218838; /* Darker tertiary */
+    transform: translateY(-2px);
+}
+
+/* Header */
+.main-header {
+    background-color: var(--white);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--light-grey);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Ajout d'un padding pour les petits écrans */
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo a {
+    color: var(--heading-color);
+    text-decoration: none;
+}
+
+.main-nav ul {
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Caché par défaut sur les grands écrans */
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--heading-color);
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero-section {
+    background: url('images/accueil.jpg') no-repeat center center/cover; /* Créez un dossier 'images' et placez-y une image */
+    color: var(--white);
+    text-align: center;
+    padding: 100px 20px;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section::before { /* Pour un effet de surcouche sombre */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-section h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 800px;
+    opacity: 0.9;
+}
+
+.hero-buttons .btn {
+    margin: 0 10px;
+}
+
+/* Sections générales */
+section {
+    padding: 80px 0;
+}
+
+section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections */
+    background-color: var(--background-light);
+}
+
+/* Services Preview */
+.services-preview-section h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.service-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.service-card .icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+/* Portfolio Preview */
+.portfolio-preview-section h3 {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.85); /* Primary color avec opacité */
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-item .overlay h4 {
+    color: var(--white);
+    margin-bottom: 10px;
+    font-size: 1.6em;
+}
+
+.portfolio-item .overlay p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.portfolio-item .btn-view {
+    display: inline-block;
+    padding: 8px 18px;
+    background-color: var(--white);
+    color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.portfolio-item .btn-view:hover {
+    background-color: var(--light-grey);
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--background-dark);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: var(--white);
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none; /* Cacher la navigation principale par défaut */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Ajuster selon la hauteur de votre header */
+        left: 0;
+        background-color: var(--white);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        padding: 20px 0;
+    }
+
+    .main-nav.active {
+        display: flex; /* Afficher la navigation quand la classe active est présente */
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block; /* Afficher le bouton bascule */
+    }
+
+    .hero-section h2 {
+        font-size: 2.5em;
+    }
+
+    .hero-section p {
+        font-size: 1.1em;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons .btn {
+        width: 80%; /* Pour que les boutons prennent plus de place sur mobile */
+        max-width: 300px;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+    }
+}

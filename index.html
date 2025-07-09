@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Votre Agence Web - Création de Sites Internet Professionnels</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="#">AGinove</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#accueil" class="active">Accueil</a></li>
+                    <li><a href="#services">Nos services</a></li>
+                    <li><a href="#portfolio">Notre portfolio</a></li>
+                    <li><a href="#processus">Notre processus</a></li>
+                    <li><a href="#a-propos">À Propos de nous</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h2>Votre présence en ligne, notre expertise.</h2>
+                <p>Création de sites web professionnels et performants pour propulser votre activité.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">Découvrir nos réalisations</a>
+                    <a href="#contact" class="btn btn-secondary">Commencer votre projet</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services-preview" class="services-preview-section">
+            <div class="container">
+                <h3>Ce que nous faisons</h3>
+                <div class="service-cards">
+                    <div class="service-card">
+                        <i class="fas fa-desktop icon"></i>
+                        <h4>Sites Vitrine & Institutionnels</h4>
+                        <p>Présentez votre entreprise de manière professionnelle et efficace sur le web.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-shopping-cart icon"></i>
+                        <h4>E-commerce</h4>
+                        <p>Vendez vos produits en ligne grâce à une boutique performante et sécurisée.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-sync-alt icon"></i>
+                        <h4>Refonte de Sites Existant</h4>
+                        <p>Modernisez et optimisez votre site web actuel pour un impact renouvelé.</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#services" class="btn btn-tertiary">Voir tous nos services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio-preview" class="portfolio-preview-section">
+            <div class="container">
+                <h3>Nos dernières réalisations</h3>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <img src="images/portfolio1.png" alt="Projet Site Vitrine Entreprise X">
+                        <div class="overlay">
+                            <h4>Site Vitrine La fée des petits pas</h4>
+                            <p>Design moderne et responsive pour une visibilité optimale.</p>
+                            <a href="https://www.lafeedespetitspas.fr" class="btn-view">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="images/portfolio2.jpg" alt="Projet Boutique E-commerce Y">
+                        <div class="overlay">
+                            <h4>Boutique E-commerce Salepim</h4>
+                            <p>Site de vente en ligne sécurisée.</p>
+                            <a href="#portfolio-detail-2" class="btn-view">Voir le projet</a>
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <img src="images/portfolio3.jpg" alt="Projet Blog Personnel Z">
+                        <div class="overlay">
+                            <h4>Jeu en ligne à but éducatif</h4>
+                            <p>Pour apprendre à écrire au clavier.</p>
+                            <a href="#portfolio-detail-3" class="btn-view">Voir le projet</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="#portfolio" class="btn btn-primary">Voir tout notre portfolio</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 AGinove. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#mentions-legales">Mentions Légales</a> |
+                <a href="#confidentialite">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    // Gestion du menu mobile (burger)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            // Change l'icône du menu burger
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times'); // Icône "X"
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars'); // Icône "burger"
+            }
+        });
+
+        // Fermer le menu si on clique sur un lien (pour les SPA ou défilement)
+        mainNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    menuToggle.querySelector('i').classList.remove('fa-times');
+                    menuToggle.querySelector('i').classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
+    // Gestion de l'état "active" pour la navigation au scroll (simple pour l'accueil)
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+    function updateActiveNavLink() {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100; // Ajustement pour le header sticky
+            if (pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNavLink);
+    updateActiveNavLink(); // Appeler au chargement pour initialiser l'état
+});
+    </script>
+</body>
+</html> 
