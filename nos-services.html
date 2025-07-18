@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nos services - AGinove</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">AGinove</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nos-services.html" class="active">Nos services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="services-detail-section">
+            <div class="container">
+                <h2>Nos services</h2>
+                <p class="section-description">Découvrez nos expertises pour booster votre présence en ligne.</p>
+
+                <div class="service-detail-grid">
+                    <!-- Site vitrine -->
+                    <div class="service-detail-card">
+                        <i class="fas fa-desktop icon"></i>
+                        <h3>Site Vitrine</h3>
+                        <p>
+                            Présentez votre entreprise, association ou activité avec un site web professionnel, moderne et responsive.<br>
+                            <strong>Pour qui&nbsp;?</strong> Artisans, PME, professions libérales, associations, événements, etc.<br>
+                            <strong>Ce que nous proposons&nbsp;:</strong>
+                        </p>
+                        <ul>
+                            <li>Design sur-mesure et adapté à votre image</li>
+                            <li>Site responsive (adapté mobile/tablette/desktop)</li>
+                            <li>Pages personnalisées (accueil, services, équipe, contact...)</li>
+                            <li>Optimisation SEO de base</li>
+                            <li>Formulaire de contact</li>
+                            <li>Hébergement et nom de domaine (optionnel)</li>
+                        </ul>
+                        <a href="contact.html?service=site-vitrine" class="btn btn-primary" style="margin-top:auto;">Demander un devis</a>
+                    </div>
+
+                    <!-- E-commerce -->
+                    <div class="service-detail-card">
+                        <i class="fas fa-shopping-cart icon"></i>
+                        <h3>E-commerce</h3>
+                        <p>
+                            Développez votre boutique en ligne pour vendre vos produits ou services 24h/24.<br>
+                            <strong>Pour qui&nbsp;?</strong> Commerçants, créateurs, entreprises souhaitant vendre en ligne.<br>
+                            <strong>Ce que nous proposons&nbsp;:</strong>
+                        </p>
+                        <ul>
+                            <li>Boutique en ligne complète (catalogue, panier, paiement sécurisé)</li>
+                            <li>Gestion des produits, catégories, stocks</li>
+                            <li>Intégration de solutions de paiement (Stripe, PayPal, CB...)</li>
+                            <li>Gestion des livraisons et frais de port</li>
+                            <li>Outils marketing (codes promo, newsletter...)</li>
+                            <li>Formation à la gestion de la boutique</li>
+                        </ul>
+                        <a href="contact.html?service=e-commerce" class="btn btn-primary" style="margin-top:auto;">Demander un devis</a>
+                    </div>
+
+                    <!-- Refonte de site -->
+                    <div class="service-detail-card">
+                        <i class="fas fa-sync-alt icon"></i>
+                        <h3>Refonte de site</h3>
+                        <p>
+                            Donnez une nouvelle vie à votre site existant pour améliorer son design, ses performances et son efficacité.<br>
+                            <strong>Pour qui&nbsp;?</strong> Toute structure ayant déjà un site web et souhaitant le moderniser.<br>
+                            <strong>Ce que nous proposons&nbsp;:</strong>
+                        </p>
+                        <ul>
+                            <li>Audit de l’existant (technique, design, SEO)</li>
+                            <li>Refonte graphique et ergonomique</li>
+                            <li>Mise à jour technique (sécurité, rapidité, responsive...)</li>
+                            <li>Migration de contenu</li>
+                            <li>Optimisation SEO</li>
+                            <li>Accompagnement à la prise en main</li>
+                        </ul>
+                        <a href="contact.html?service=refonte" class="btn btn-primary" style="margin-top:auto;">Demander une soumission</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 AGinove. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="#mentions-legales">Mentions Légales</a> |
+                <a href="#confidentialite">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gestion du menu mobile (burger)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    // Change l'icône du menu burger
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html> 
