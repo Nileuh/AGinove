@@ -16,10 +16,10 @@
                 <ul>
                     <li><a href="#accueil" class="active">Accueil</a></li>
                     <li><a href="#services">Nos services</a></li>
-                    <li><a href="#portfolio">Notre portfolio</a></li>
-                    <li><a href="#processus">Notre processus</a></li>
-                    <li><a href="#a-propos">À Propos de nous</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <!-- <li><a href="#portfolio">Notre portfolio</a></li> -->
+                    <!-- <li><a href="#processus">Notre processus</a></li> -->
+                    <!-- <li><a href="#a-propos">À Propos de nous</a></li> -->
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
             <button class="menu-toggle" aria-label="Ouvrir le menu">
@@ -34,8 +34,8 @@
                 <h2>Votre présence en ligne, notre expertise.</h2>
                 <p>Création de sites web professionnels et performants pour propulser votre activité.</p>
                 <div class="hero-buttons">
-                    <a href="#portfolio" class="btn btn-primary">Découvrir nos réalisations</a>
-                    <a href="#contact" class="btn btn-secondary">Commencer votre projet</a>
+                    <a href="#portfolio-preview" class="btn btn-primary" id="discoverBtn">Découvrir nos réalisations</a>
+                    <a href="contact.html" class="btn btn-secondary">Commencer votre projet</a>
                 </div>
             </div>
         </section>
@@ -83,7 +83,7 @@
                         <div class="overlay">
                             <h4>Boutique E-commerce Salepim</h4>
                             <p>Site de vente en ligne sécurisée.</p>
-                            <a href="#portfolio-detail-2" class="btn-view">Voir le projet</a>
+                            <!-- <a href="#portfolio-detail-2" class="btn-view">Voir le projet</a> -->
                         </div>
                     </div>
                     <div class="portfolio-item">
@@ -91,12 +91,12 @@
                         <div class="overlay">
                             <h4>Jeu en ligne à but éducatif</h4>
                             <p>Pour apprendre à écrire au clavier.</p>
-                            <a href="#portfolio-detail-3" class="btn-view">Voir le projet</a>
+                            <!-- <a href="#portfolio-detail-3" class="btn-view">Voir le projet</a> -->
                         </div>
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="#portfolio" class="btn btn-primary">Voir tout notre portfolio</a>
+                    <a href="contact.html" class="btn btn-primary">Commencer votre projet</a>
                 </div>
             </div>
         </section>
@@ -113,70 +113,96 @@
     </footer>
 
     <script>
-        // Script pour le menu mobile
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        navToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            navToggle.classList.toggle('active');
-        });
-
         document.addEventListener('DOMContentLoaded', () => {
-    // Gestion du menu mobile (burger)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
+            // Gestion du menu mobile (burger)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
 
-    if (menuToggle && mainNav) {
-        menuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            // Change l'icône du menu burger
-            const icon = menuToggle.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times'); // Icône "X"
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars'); // Icône "burger"
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    // Change l'icône du menu burger
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times'); // Icône "X"
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars'); // Icône "burger"
+                    }
+                });
+
+                // Fermer le menu si on clique sur un lien
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Gestion de l'état "active" pour la navigation au scroll
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.main-nav ul li a');
+
+            function updateActiveNavLink() {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    if (pageYOffset >= sectionTop) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateActiveNavLink);
+            updateActiveNavLink(); // Initialiser l'état
+
+            // Gestion du scroll smooth pour le bouton "Découvrir nos réalisations"
+            const discoverBtn = document.getElementById('discoverBtn');
+            const portfolioSection = document.getElementById('portfolio-preview');
+
+            if (discoverBtn && portfolioSection) {
+                discoverBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Position de départ et d'arrivée
+                    const startPosition = window.pageYOffset;
+                    const targetPosition = portfolioSection.offsetTop - 100;
+                    const distance = targetPosition - startPosition;
+                    const duration = 2000; // 2 secondes
+                    let startTime = performance.now();
+
+                    function smoothScroll(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        
+                        // Fonction d'easing pour un mouvement naturel
+                        const easeInOutQuart = t => t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
+                        const easedProgress = easeInOutQuart(progress);
+                        
+                        const currentPosition = startPosition + (distance * easedProgress);
+                        window.scrollTo(0, currentPosition);
+                        
+                        if (progress < 1) {
+                            requestAnimationFrame(smoothScroll);
+                        }
+                    }
+                    
+                    requestAnimationFrame(smoothScroll);
+                });
             }
         });
-
-        // Fermer le menu si on clique sur un lien (pour les SPA ou défilement)
-        mainNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
-                }
-            });
-        });
-    }
-
-    // Gestion de l'état "active" pour la navigation au scroll (simple pour l'accueil)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.main-nav ul li a');
-
-    function updateActiveNavLink() {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100; // Ajustement pour le header sticky
-            if (pageYOffset >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
-                link.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', updateActiveNavLink);
-    updateActiveNavLink(); // Appeler au chargement pour initialiser l'état
-});
     </script>
 </body>
 </html> 
