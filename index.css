@@ -542,6 +542,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .container{
+        padding: 0;
+    }
     .main-nav {
         display: none; /* Cacher la navigation principale par défaut */
         flex-direction: column;
@@ -714,6 +717,12 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
         width: 100%;
         min-width: 0;
     }
+    .service-detail-card ul{
+        margin-bottom: 20px;
+    }
+    .hero-buttons .btn{
+        margin-bottom: 20px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -752,4 +761,8 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .service-detail-card ul {
         font-size: 0.95em;
     }
+}
+
+.services-detail-section h2 {
+    text-align: center;
 }
