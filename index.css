@@ -701,3 +701,55 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
         width: 100%;
     }
 }
+
+/* Responsive pour la section Nos services (service-detail-grid) */
+@media (max-width: 900px) {
+    .service-detail-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .service-detail-card {
+        max-width: 100%;
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-detail-section {
+        padding: 40px 0;
+    }
+    .service-detail-grid {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+        padding: 0 8px;
+    }
+    .service-detail-card {
+        padding: 24px 12px 16px 12px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        font-size: 0.98em;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .service-detail-card .btn {
+        font-size: 1em;
+        padding: 12px 0;
+        margin-bottom: 0;
+    }
+    .service-detail-card h3 {
+        font-size: 1.1em;
+    }
+    .service-detail-card .icon {
+        font-size: 2em;
+    }
+    .service-detail-card ul {
+        font-size: 0.95em;
+    }
+}
