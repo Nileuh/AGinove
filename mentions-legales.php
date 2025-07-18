@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales - AGinove</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo"><a href="index.html">AGinove</a></h1>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="nos-services.html">Nos services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="container" style="max-width: 900px; margin: 40px auto;">
+            <h2>Mentions Légales</h2>
+            <p>Cette page a pour but d'identifier clairement l'éditeur du site et de présenter les conditions générales d'utilisation.</p>
+            <h3>1. Informations sur l'Éditeur du Site</h3>
+            <ul>
+                <li>Nom de l'entreprise : AGinove</li>
+                <li>Adresse : 500 rue Upper Edison, J4R 2V5, Saint-Lambert, QC, Canada</li>
+                <li>Téléphone : +1 438 880 3612</li>
+                <li>Courriel : aginove.web@gmail.com</li>
+                <li>Numéro d'Entreprise du Québec (NEQ) : pas encore inscrit</li>
+            </ul>
+            <h3>2. Hébergement du Site</h3>
+            <p>Le présent site web est hébergé par :</p>
+            <ul>
+                <li>Nom de l'hébergeur : Github page</li>
+                <li>Coordonnées de l'hébergeur : github.com</li>
+            </ul>
+            <h3>3. Propriété Intellectuelle</h3>
+            <p>L'ensemble du contenu de ce site web, incluant, sans s'y limiter, les textes, images, graphiques, logos, icônes, sons, vidéos, logiciels, est la propriété de AGinove ou de ses partenaires et est protégé par les lois canadiennes et internationales sur la propriété intellectuelle.</p>
+            <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de AGinove.</p>
+            <h3>4. Conditions Générales d'Utilisation du Site</h3>
+            <p>L'utilisation de ce site implique l'acceptation pleine et entière des conditions générales d'utilisation décrites ci-après. Ces conditions sont susceptibles d'être modifiées ou complétées à tout moment.</p>
+            <ul>
+                <li>L'accès au site est libre et gratuit.</li>
+                <li>L'utilisateur s'engage à utiliser le site de manière loyale et licite.</li>
+                <li>L'Entreprise ne pourra être tenue responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site, résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées, soit de l’apparition d’un bug ou d’une incompatibilité.</li>
+                <li>Le site peut contenir des liens hypertextes vers d’autres sites. AGinove n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu.</li>
+            </ul>
+            <h3>5. Droit Applicable et Juridiction</h3>
+            <p>Le présent site web est régi par les lois de la province de Québec, Canada. Tout litige en relation avec l'utilisation du site sera soumis à la juridiction exclusive des tribunaux compétents de la province de Québec.</p>
+        </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 AGinove. Tous droits réservés.</p>
+            <div class="footer-links">
+                <a href="mentions-legales.php">Mentions Légales</a> |
+                <a href="politique-confidentialite.html">Politique de Confidentialité</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html> 
