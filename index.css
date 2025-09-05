@@ -646,16 +646,23 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
         display: none; /* Cacher la navigation principale par défaut */
         flex-direction: column;
         width: 100%;
-        position: absolute;
-        top: 180px; /* Ajuster selon la hauteur de votre header */
+        position: fixed;
+        top: 0;
         left: 0;
+        right: 0;
+        bottom: 0;
         background-color: var(--primary-color);
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-        padding: 20px 0;
+        padding: 100px 0 20px 0;
+        z-index: 9999;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
     }
 
     .main-nav.active {
         display: flex; /* Afficher la navigation quand la classe active est présente */
+        transform: translateX(0);
     }
 
     .main-nav ul {
@@ -664,12 +671,31 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     }
 
     .main-nav ul li {
-        margin: 10px 0;
+        margin: 0;
         text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .main-nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    .main-nav ul li a {
+        display: block;
+        padding: 20px 0;
+        font-size: 1.2em;
+        font-weight: 500;
+        transition: background-color 0.3s ease;
+    }
+
+    .main-nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
     }
 
     .menu-toggle {
         display: block; /* Afficher le bouton bascule */
+        z-index: 10000;
+        position: relative;
     }
 
     .main-header .container {
