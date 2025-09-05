@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Votre Agence Web - Création de Sites Internet Professionnels</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="index.css">
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -11,7 +14,12 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <h1 class="logo"><a href="#">AGinove</a></h1>
+            <div class="logo-container">
+                <a href="https://aginove.com">
+                    <img src="images/aginove-logo.png" alt="Logo AGinove" class="logo-image">
+                </a>
+                <h1 class="logo"><a href="https://aginove.com">AGinove</a></h1>
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html" class="active">Accueil</a></li>
@@ -58,7 +66,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <a href="nos-services.html" class="btn btn-tertiary">Voir tous nos services</a>
+                    <a href="nos-services.html" class="btn btn-primary">Voir tous nos services</a>
                 </div>
             </div>
         </section>
@@ -197,6 +205,38 @@
                     }
                     
                     requestAnimationFrame(smoothScroll);
+                });
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gestion du menu mobile (burger)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    // Change l'icône du menu burger
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
                 });
             }
         });

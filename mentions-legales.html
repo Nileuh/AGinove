@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mentions Légales - AGinove</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <header class="main-header">
         <div class="container">
-            <h1 class="logo"><a href="index.html">AGinove</a></h1>
+            <div class="logo-container">
+                <a href="https://aginove.com">
+                    <img src="images/aginove-logo.png" alt="Logo AGinove" class="logo-image">
+                </a>
+                <h1 class="logo"><a href="https://aginove.com">AGinove</a></h1>
+            </div>
             <nav class="main-nav">
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
@@ -17,6 +25,9 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Ouvrir le menu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
     <main class="main-content">
@@ -61,5 +72,37 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Gestion du menu mobile (burger)
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+
+            if (menuToggle && mainNav) {
+                menuToggle.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    // Change l'icône du menu burger
+                    const icon = menuToggle.querySelector('i');
+                    if (mainNav.classList.contains('active')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                });
+
+                mainNav.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            menuToggle.querySelector('i').classList.remove('fa-times');
+                            menuToggle.querySelector('i').classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

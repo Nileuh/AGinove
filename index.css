@@ -2,7 +2,7 @@
 
 /* Variables CSS pour les couleurs */
 :root {
-    --primary-color: #007bff; /* Bleu principal */
+    --primary-color: #0048BF; /* Bleu principal - couleur du logo */
     --secondary-color: #6c757d; /* Gris secondaire */
     --tertiary-color: #28a745; /* Vert pour CTA secondaire */
     --text-color: #333;
@@ -21,20 +21,19 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
     scroll-behavior: smooth;
     /* Animation plus fluide pour le scroll */
-    scroll-padding-top: 80px; /* Compense la hauteur du header */
+    scroll-padding-top: 180px; /* Compense la hauteur du header */
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -89,7 +88,7 @@ ul {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Darker primary */
+    background-color: #003d99; /* Darker primary - version plus foncée de #0048BF */
     transform: translateY(-2px);
 }
 
@@ -118,30 +117,50 @@ ul {
 
 /* Header */
 .main-header {
-    background-color: var(--white);
-    padding: 15px 0;
-    border-bottom: 1px solid var(--light-grey);
+    background-color: var(--primary-color);
+    padding: 0;
+    border-bottom: 1px solid var(--primary-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px; /* Ajout d'un padding pour les petits écrans */
+    padding: 20px 20px 0px 20px; /* Padding uniforme */
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo-image {
+    height: 100px;
+    width: auto;
 }
 
 .logo {
-    font-size: 1.8em;
+    font-size: 3.2em;
     font-weight: bold;
+    margin: 0;
+    letter-spacing: 0.10em;
+    padding-bottom: 20px;
 }
 
 .logo a {
-    color: var(--heading-color);
+    color: var(--white);
     text-decoration: none;
+}
+
+.logo-container a {
+    text-decoration: none;
+    display: inline-block;
 }
 
 .main-nav ul {
@@ -153,8 +172,10 @@ ul {
 }
 
 .main-nav ul li a {
-    color: var(--text-color);
+    color: var(--white);
     font-weight: 500;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
     padding: 5px 0;
     position: relative;
 }
@@ -166,13 +187,17 @@ ul {
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: var(--primary-color);
+    background-color: var(--white);
     transition: width 0.3s ease;
 }
 
-.main-nav ul li a:hover::after,
-.main-nav ul li a.active::after {
+.main-nav ul li a:hover::after {
     width: 100%;
+}
+
+.main-nav ul li a.active {
+    font-weight: 600;
+    opacity: 0.9;
 }
 
 .menu-toggle {
@@ -180,7 +205,7 @@ ul {
     background: none;
     border: none;
     font-size: 1.8em;
-    color: var(--heading-color);
+    color: var(--white);
     cursor: pointer;
 }
 
@@ -218,7 +243,7 @@ ul {
 
 .hero-section p {
     font-size: 1.3em;
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
     max-width: 800px;
     opacity: 0.9;
 }
@@ -318,7 +343,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 123, 255, 0.85); /* Primary color avec opacité */
+    background-color: rgba(0, 72, 191, 0.85); /* Primary color avec opacité - #0048BF */
     color: var(--white);
     display: flex;
     flex-direction: column;
@@ -361,7 +386,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Footer */
 .main-footer {
-    background-color: var(--background-dark);
+    background-color: var(--primary-color);
     color: var(--white);
     padding: 30px 0;
     text-align: center;
@@ -379,10 +404,13 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     color: var(--white);
     margin: 0 10px;
     transition: color 0.3s ease;
+    opacity: 0.9;
 }
 
 .footer-links a:hover {
-    color: var(--primary-color);
+    color: var(--white);
+    opacity: 1;
+    text-decoration: underline;
 }
 
 
@@ -484,7 +512,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     border-radius: 5px;
     font-size: 1em;
     transition: border-color 0.3s ease;
-    font-family: inherit;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .form-group input:focus,
@@ -497,6 +525,16 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+/* Styles spécifiques pour le bouton de soumission */
+.form-group button[type="submit"] {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    display: block;
 }
 
 /* FAQ Section */
@@ -542,6 +580,16 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .main-header .container {
+        padding: 15px 20px 0px 20px;
+    }
+    .logo-image {
+        height: 70px;
+    }
+    .logo{
+        font-size: 2em;
+        padding-bottom: 10px;
+    }
     .container{
         padding: 0;
     }
@@ -550,9 +598,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 70px; /* Ajuster selon la hauteur de votre header */
+        top: 180px; /* Ajuster selon la hauteur de votre header */
         left: 0;
-        background-color: var(--white);
+        background-color: var(--primary-color);
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         padding: 20px 0;
     }
@@ -573,6 +621,20 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
     .menu-toggle {
         display: block; /* Afficher le bouton bascule */
+    }
+
+    .main-header .container {
+        min-height: 100px; /* Hauteur réduite sur mobile */
+        padding: 15px 20px;
+    }
+
+    .logo-image {
+        height: 70px; /* Logo plus petit sur mobile */
+    }
+
+    .logo {
+        font-size: 2.8em; /* Titre plus petit sur mobile */
+        letter-spacing: 0.12em; /* Espacement légèrement réduit sur mobile */
     }
 
     .hero-section h2 {
@@ -614,6 +676,14 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
     .faq-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Bouton de soumission sur mobile */
+    .form-group button[type="submit"] {
+        padding: 12px 25px;
+        font-size: 1em;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -695,6 +765,16 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 900px) {
+    .main-header .container {
+        padding: 15px 20px 0px 20px;
+    }
+    .logo-image {
+        height: 70px;
+    }
+    .logo{
+        font-size: 2em;
+        padding-bottom: 10px;
+    }
     .service-detail-grid {
         flex-direction: column;
         align-items: center;
@@ -726,6 +806,16 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 600px) {
+    .main-header .container {
+        padding: 15px 20px 0px 20px;
+    }
+    .logo-image {
+        height: 70px;
+    }
+    .logo{
+        font-size: 2em;
+        padding-bottom: 10px;
+    }
     .service-detail-section {
         padding: 40px 0;
     }
