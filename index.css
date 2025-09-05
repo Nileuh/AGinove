@@ -288,10 +288,39 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.service-card .icon {
+.service-card .icon, .service-detail-card .icon {
     font-size: 3em;
     color: var(--primary-color);
     margin-bottom: 20px;
+    transition: transform 0.9s ease;
+}
+
+/* Animation de rotation pour l'icône de refonte */
+.service-card:nth-child(3):hover .icon, .service-detail-card:nth-child(3):hover .icon {
+    transform: rotate(360deg);
+}
+
+/* Animation d'arrière-plan pour l'icône desktop */
+.service-card:nth-child(1):hover .icon,  .service-detail-card:nth-child(1):hover .icon {
+    color: #ffb71c; /* Bleu ciel */
+    transition: color 3s ease;
+}
+
+/* Animation de déplacement pour l'icône shopping-cart */
+.service-card:nth-child(2):hover .icon,  .service-detail-card:nth-child(2):hover .icon {
+    animation: moveRight 0.6s ease-in-out;
+}
+
+@keyframes moveRight {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(15px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .service-card h4 {
@@ -578,8 +607,28 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     line-height: 1.6;
 }
 
+.service-detail-card .icon, .service-detail-card h3{
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 20px 0;
+    }
+    .faq-section {
+        padding: 50px 0;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .hero-section{
+        padding: 80px 10px;
+    }
+    .hero-section h2 {
+        font-size: 1.6em;
+    }
     .main-header .container {
         padding: 15px 20px 0px 20px;
     }
@@ -712,7 +761,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.9s, box-shadow 0.3s;
     position: relative;
 }
 
@@ -765,6 +814,18 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 900px) {
+    .faq-section {
+        padding: 50px 0;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .hero-section{
+        padding: 80px 10px;
+    }
+    .hero-section h2 {
+        font-size: 1.6em;
+    }
     .main-header .container {
         padding: 15px 20px 0px 20px;
     }
@@ -787,6 +848,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive pour la section Nos services (service-detail-grid) */
 @media (max-width: 900px) {
+    .contact-section {
+        padding: 20px 0;
+    }
     .service-detail-grid {
         flex-direction: column;
         align-items: center;
@@ -806,6 +870,21 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 600px) {
+    .contact-section {
+        padding: 20px 0;
+    }
+    .faq-section {
+        padding: 50px 0;
+    }
+    section {
+        padding: 50px 0;
+    }
+    .hero-section{
+        padding: 80px 10px;
+    }
+    .hero-section h2 {
+        font-size: 1.6em;
+    }
     .main-header .container {
         padding: 15px 20px 0px 20px;
     }
