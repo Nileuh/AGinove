@@ -2,7 +2,7 @@
 
 /* Variables CSS pour les couleurs */
 :root {
-    --primary-color: #0048BF; /* Bleu principal - couleur du logo */
+    --primary-color: #0081cc; /* Bleu principal - couleur du logo */
     --secondary-color: #6c757d; /* Gris secondaire */
     --tertiary-color: #28a745; /* Vert pour CTA secondaire */
     --text-color: #333;
@@ -88,7 +88,7 @@ ul {
 }
 
 .btn-primary:hover {
-    background-color: #003d99; /* Darker primary - version plus foncée de #0048BF */
+    background-color: #003d99; /* Darker primary - version plus foncée de #0081cc */
     transform: translateY(-2px);
 }
 
@@ -372,7 +372,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 72, 191, 0.85); /* Primary color avec opacité - #0048BF */
+    background-color: rgba(0, 72, 191, 0.85); /* Primary color avec opacité - #0081cc */
     color: var(--white);
     display: flex;
     flex-direction: column;
