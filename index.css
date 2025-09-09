@@ -2,7 +2,8 @@
 
 /* Variables CSS pour les couleurs */
 :root {
-    --primary-color: #0081cc; /* Bleu principal - couleur du logo */
+    --primary-color: #0081cc;
+    --primary-color2: #024267; /* Bleu principal - couleur du logo */
     --secondary-color: #6c757d; /* Gris secondaire */
     --tertiary-color: #28a745; /* Vert pour CTA secondaire */
     --text-color: #333;
@@ -24,7 +25,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--white);
+    background-color: var(--light-grey);
     scroll-behavior: smooth;
     /* Animation plus fluide pour le scroll */
     scroll-padding-top: 180px; /* Compense la hauteur du header */
@@ -84,30 +85,31 @@ ul {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--background-light);
 }
 
 .btn-primary:hover {
-    background-color: #003d99; /* Darker primary - version plus foncée de #0081cc */
+    background-color: var(--primary-color2);
+    color: var(--background-light);
     transform: translateY(-2px);
 }
 
 .btn-secondary {
     background-color: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--background-light);
+    border: 2px solid var(--background-light);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border-color: var(--primary-color);
+    background-color: var(--primary-color2);
+    color: var(--background-light);
+    border-color: var(--primary-color2);
     transform: translateY(-2px);
 }
 
 .btn-tertiary {
     background-color: var(--tertiary-color);
-    color: var(--white);
+    color: var(--background-light);
 }
 
 .btn-tertiary:hover {
@@ -171,7 +173,7 @@ ul {
 }
 
 .logo a {
-    color: var(--white);
+    color: var(--background-light);
     text-decoration: none;
 }
 
@@ -189,9 +191,9 @@ ul {
 }
 
 .main-nav ul li a {
-    color: var(--white);
+    color: var(--background-light);
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.2em;
     letter-spacing: 0.05em;
     padding: 5px 0;
     position: relative;
@@ -204,7 +206,7 @@ ul {
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: var(--white);
+    background-color: var(--background-light);
     transition: width 0.3s ease;
 }
 
@@ -222,13 +224,13 @@ ul {
     background: none;
     border: none;
     font-size: 1.8em;
-    color: var(--white);
+    color: var(--background-light);
     cursor: pointer;
 }
 
 /* Hero Section */
 .hero-section {
-    color: var(--white);
+    color: var(--background-light);
     text-align: center;
     padding: 100px 20px;
     min-height: 500px;
@@ -304,7 +306,7 @@ ul {
 .hero-section h2 {
     font-size: 3.5em;
     margin-bottom: 20px;
-    color: var(--white);
+    color: var(--light-grey);
 }
 
 .hero-section p {
@@ -438,7 +440,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 72, 191, 0.85); /* Primary color avec opacité - #0081cc */
+    background-color: #0081cc; /* Primary color avec opacité - #0081cc */
     color: var(--white);
     display: flex;
     flex-direction: column;
