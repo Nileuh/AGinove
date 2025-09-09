@@ -690,6 +690,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .btn {
+        padding: 12px 20px;
+    }
     .footer-links{
         flex-direction: column;
     }
@@ -916,6 +919,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 900px) {
+    .btn {
+        padding: 12px 20px;
+    }
     .footer-links{
         flex-direction: column;
     }
@@ -953,6 +959,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive pour la section Nos services (service-detail-grid) */
 @media (max-width: 900px) {
+    .btn {
+        padding: 12px 20px;
+    }
     .footer-links{
         flex-direction: column;
     }
@@ -981,6 +990,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 600px) {
+    .btn {
+        padding: 12px 20px;
+    }
     .footer-links{
         flex-direction: column;
     }
