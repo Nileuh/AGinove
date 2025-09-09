@@ -690,6 +690,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .footer-links{
         flex-direction: column;
     }
+    .footer-links a {
+        font-size: 1em;
+    }
     .contact-section {
         padding: 20px 0;
     }
@@ -913,6 +916,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .footer-links{
         flex-direction: column;
     }
+    .footer-links a {
+        font-size: 1em;
+    }
     .faq-section {
         padding: 50px 0;
     }
@@ -947,6 +953,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .footer-links{
         flex-direction: column;
     }
+    .footer-links a {
+        font-size: 1em;
+    }
     .contact-section {
         padding: 20px 0;
     }
@@ -971,6 +980,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 @media (max-width: 600px) {
     .footer-links{
         flex-direction: column;
+    }
+    .footer-links a {
+        font-size: 1em;
     }
     .contact-section {
         padding: 20px 0;
