@@ -132,7 +132,7 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 14px 20px 7px 20px; /* Padding uniforme */
+    padding: 17px 20px 10px 20px; /* Padding uniforme */
 }
 
 .logo-container {
@@ -145,21 +145,24 @@ ul {
 .logo-image {
     height: 100px;
     width: auto;
-    animation: rotateAndStop 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    animation: rotateAndStopAndBounce 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
     transform-origin: center;
 }
 
-@keyframes rotateAndStop {
+@keyframes rotateAndStopAndBounce {
     0% {
         transform: rotate(0deg);
     }
-    70% {
-        transform: rotate(360deg);
+    60% { /* Atteindre 330 degrés un peu plus tôt */
+        transform: rotate(330deg);
     }
-    85% {
+    70% { /* Maintenir 330 degrés pour un court arrêt */
+        transform: rotate(330deg);
+    }
+    85% { /* Repartir pour dépasser 360 et aller vers 375 */
         transform: rotate(375deg);
     }
-    100% {
+    100% { /* Rebondir et s'arrêter à 360 */
         transform: rotate(360deg);
     }
 }
