@@ -497,16 +497,17 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 .footer-links a {
-    color: var(--white);
+    color: var(--background-light);
     margin: 0 10px;
     transition: color 0.3s ease;
     opacity: 0.9;
+    font-size: 1.2em;
 }
 
 .footer-links a:hover {
     color: var(--white);
     opacity: 1;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 
