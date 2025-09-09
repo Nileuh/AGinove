@@ -496,6 +496,11 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     gap: 10px;
 }
 
+.footer-links{
+    display: flex;
+    flex-direction: row;
+}
+
 .footer-links a {
     color: var(--background-light);
     margin: 0 10px;
@@ -682,6 +687,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .footer-links{
+        flex-direction: column;
+    }
     .contact-section {
         padding: 20px 0;
     }
@@ -902,6 +910,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 900px) {
+    .footer-links{
+        flex-direction: column;
+    }
     .faq-section {
         padding: 50px 0;
     }
@@ -933,6 +944,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Responsive pour la section Nos services (service-detail-grid) */
 @media (max-width: 900px) {
+    .footer-links{
+        flex-direction: column;
+    }
     .contact-section {
         padding: 20px 0;
     }
@@ -955,6 +969,9 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 }
 
 @media (max-width: 600px) {
+    .footer-links{
+        flex-direction: column;
+    }
     .contact-section {
         padding: 20px 0;
     }
