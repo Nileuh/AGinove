@@ -130,27 +130,44 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 20px 0px 20px; /* Padding uniforme */
+    padding: 14px 20px 7px 20px; /* Padding uniforme */
 }
 
 .logo-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 }
 
 .logo-image {
     height: 100px;
     width: auto;
+    animation: rotateAndStop 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+    transform-origin: center;
+}
+
+@keyframes rotateAndStop {
+    0% {
+        transform: rotate(0deg);
+    }
+    70% {
+        transform: rotate(360deg);
+    }
+    85% {
+        transform: rotate(375deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .logo {
     font-size: 3.2em;
     font-weight: bold;
     margin: 0;
-    letter-spacing: 0.10em;
-    padding-bottom: 20px;
+    letter-spacing: -0.09em;
+    padding-bottom: 7px;
 }
 
 .logo a {
@@ -173,7 +190,7 @@ ul {
 
 .main-nav ul li a {
     color: var(--white);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.1em;
     letter-spacing: 0.05em;
     padding: 5px 0;
@@ -211,7 +228,6 @@ ul {
 
 /* Hero Section */
 .hero-section {
-    background: url('images/accueil.jpg') no-repeat center center/cover; /* Créez un dossier 'images' et placez-y une image */
     color: var(--white);
     text-align: center;
     padding: 100px 20px;
@@ -222,9 +238,35 @@ ul {
     flex-direction: column;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
-.hero-section::before { /* Pour un effet de surcouche sombre */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/accueil.jpg') no-repeat center center/cover;
+    z-index: -3;
+    animation: heroSlideShow 16s ease-in-out infinite;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('images/accueil3.jpg') no-repeat center center/cover;
+    z-index: -2;
+    opacity: 0;
+    animation: heroSlideShow2 16s ease-in-out infinite;
+}
+
+.hero-section .overlay {
     content: '';
     position: absolute;
     top: 0;
@@ -233,6 +275,30 @@ ul {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: -1;
+}
+
+@keyframes heroSlideShow {
+    0%, 40% {
+        opacity: 1;
+    }
+    50%, 90% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes heroSlideShow2 {
+    0%, 40% {
+        opacity: 0;
+    }
+    50%, 90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
 }
 
 .hero-section h2 {
@@ -528,7 +594,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--heading-color);
 }
 
@@ -629,9 +695,6 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .hero-section h2 {
         font-size: 1.6em;
     }
-    .main-header .container {
-        padding: 15px 20px 0px 20px;
-    }
     .logo-image {
         height: 70px;
     }
@@ -683,7 +746,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
         display: block;
         padding: 20px 0;
         font-size: 1.2em;
-        font-weight: 500;
+        font-weight: 600;
         transition: background-color 0.3s ease;
     }
 
@@ -699,7 +762,6 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
     .main-header .container {
         min-height: 100px; /* Hauteur réduite sur mobile */
-        padding: 15px 20px;
     }
 
     .logo-image {
@@ -708,7 +770,6 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
     .logo {
         font-size: 2.8em; /* Titre plus petit sur mobile */
-        letter-spacing: 0.12em; /* Espacement légèrement réduit sur mobile */
     }
 
     .hero-section h2 {
@@ -851,9 +912,6 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     .hero-section h2 {
         font-size: 1.6em;
     }
-    .main-header .container {
-        padding: 15px 20px 0px 20px;
-    }
     .logo-image {
         height: 70px;
     }
@@ -909,9 +967,6 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
     }
     .hero-section h2 {
         font-size: 1.6em;
-    }
-    .main-header .container {
-        padding: 15px 20px 0px 20px;
     }
     .logo-image {
         height: 70px;
