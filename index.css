@@ -369,7 +369,7 @@ section:nth-of-type(even) { /* Pour alterner les couleurs de fond des sections *
 
 /* Animation d'arrière-plan pour l'icône desktop */
 .service-card:nth-child(1):hover .icon,  .service-detail-card:nth-child(1):hover .icon {
-    color: #ffb71c; /* Bleu ciel */
+    color: var(--primary-color2);
     transition: color 3s ease;
 }
 
