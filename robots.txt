@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aginove.com/sitemap.xml
